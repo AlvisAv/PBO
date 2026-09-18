@@ -1,0 +1,13 @@
+1. import modul :
+    Perbedaan: Modul diimpor secara utuh. Untuk mengakses properti di dalamnya (konstanta atau fungsi), 
+            pengguna harus menuliskan nama modul terlebih dahulu diikuti dengan nama propertinya 
+            (misalnya, math.pi atau math.sin()).  
+    Kelebihan: Dapat membedakan secara jelas antara fungsi/variabel bawaan modul dengan variabel/fungsi
+            yang ditulis sendiri oleh programmer, sehingga mencegah bentrok penamaan.  
+
+2. from modul import entity :
+    Perbedaan: Mengimpor entitas spesifik secara langsung (baik berupa konstanta maupun fungsi) 
+            ke dalam header. Saat memanggil fungsi atau konstanta tersebut, nama modul tidak perlu
+            dituliskan kembali (misalnya, cukup menuliskan sin(pi/2)).  
+    Kelebihan: Penulisan kode menjadi lebih ringkas dan cepat karena tidak perlu mengulang penulisan 
+            nama modul setiap kali memanggil properti di dalamnya.
