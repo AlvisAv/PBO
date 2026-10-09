@@ -2,6 +2,7 @@ class Mamalia():
     paruparu = True
     def __init__(self):
         self.gigi = True
+
     def bergerak(self):
         return 'Berjalan/Berenang'
 
@@ -11,6 +12,7 @@ class Kucing(Mamalia):
         self.nama = val1
         self.kaki = val2
         self.suara = val3
+
     def bersuara(self):
         return self.suara
 

@@ -1,6 +1,7 @@
 class Mamalia:
     def __init__(self, nama):
         self.nama = nama
+
     def __str__(self):
         return "Nama : "+ self.nama + ""
 

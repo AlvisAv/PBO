@@ -2,6 +2,7 @@ class Mamalia():
     paruparu = True
     def __init__(self):
         self.gigi = True
+    
     def bergerak(self):
         return 'Berjalan/Berenang'
 
