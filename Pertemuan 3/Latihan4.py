@@ -21,10 +21,10 @@ except Exception as e:
 
 try:
     import zipimport
-    importer = zipimport.zipimporter("non_existent_archive.zip")
+    importer = zipimport.zipimporter("tidak_ada.zip")
 except zipimport.ZipImportError as e:
     print("Terjadi ZipImportError:", e)
 except ImportError as e:
     print("Terjadi ImportError:", e)
 except Exception as e:
-    print("Terjadi Exception umum:", e)
+    print("Terjadi Exception umum:", e) 
