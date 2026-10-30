@@ -37,28 +37,32 @@ try:
             menu = int(input("Masukkan menu yang Anda Inginkan:"))
             
             if (menu == 1):
-                usr.select_data(usernamelogin)
+                usr.select_data()
+                usr.insert_log(usernamelogin, "Lihat data user")
             elif (menu == 2):
                 nama_baru = input("Masukkan nama :")
                 username_baru = input("Masukkan username :")
                 password_baru = input("Masukkan password :")
-                level_baru = input("Masukkan level (Admin/Kasir):")
-                usr.insert_data(nama_baru, username_baru, password_baru, level_baru, usernamelogin)
-                usr.select_data(usernamelogin)
+                level_baru = input("Masukkan level :")
+                usr.insert_data(nama_baru, username_baru, password_baru, level_baru)
+                usr.select_data()
+                usr.insert_log(usernamelogin, "Tambah data user")
             elif (menu == 3):
                 username = input("Masukkan username data yang akan diganti :")
                 nama_baru = input("Masukkan nama :")
                 password_baru = input("Masukkan password :")
-                level_baru = input("Masukkan level (Admin/Kasir):")
-                usr.update_data(nama_baru, password_baru, level_baru, username, usernamelogin)
-                usr.select_data(usernamelogin)
+                level_baru = input("Masukkan level :")
+                usr.update_data(nama_baru, password_baru, level_baru, username)
+                usr.select_data()
+                usr.insert_log(usernamelogin, "Edit data user")
             elif (menu == 4):
                 username = input("Masukkan username data yang akan dihapus:")
-                usr.delete_data(username, usernamelogin)
-                usr.select_data(usernamelogin)
+                usr.delete_data(username)
+                usr.select_data()
+                usr.insert_log(usernamelogin, "Delete data user")
             elif (menu == 5):
                 usr.select_log()
-                usr.insert_log(usernamelogin, "Melihat data log aktivitas")
+                usr.insert_log(usernamelogin, "Lihat log aktivitas")
             elif (menu == 6):
                 usr.insert_log(usernamelogin, "Logout")
                 usernamelogin, level_login = login()
@@ -70,34 +74,36 @@ try:
             menu = int(input("Masukkan menu yang Anda Inginkan:"))
             
             if (menu == 1):
-                brg.select_data(usernamelogin)
+                brg.select_data()
+                brg.insert_log(usernamelogin, "Lihat data barang")
             elif (menu == 2):
                 id_baru = input("Masukkan id: ")
                 nama_baru = input("Masukkan nama : ")
                 stok_baru = input("Masukkan stok: ")
                 harga_baru = input("Masukkan harga: ")
                 kategori_baru = input("Masukkan kategori : ")
-                brg.insert_data(id_baru, nama_baru, stok_baru, harga_baru, kategori_baru, usernamelogin)
-                brg.select_data(usernamelogin)
+                brg.insert_data(id_baru, nama_baru, stok_baru, harga_baru, kategori_baru)
+                brg.select_data()
+                brg.insert_log(usernamelogin, "Tambah data barang")
             elif (menu == 3):
                 id = input("Masukkan id data yang akan diganti :")
                 nama_baru = input("Masukkan nama :")
                 stok_baru = input("Masukkan stok:")
                 harga_baru = input("Masukkan harga :")
                 kategori_baru = input("Masukkan kategori : ")
-                brg.update_data(nama_baru, stok_baru, harga_baru, kategori_baru, id, usernamelogin)
-                brg.select_data(usernamelogin)
+                brg.update_data(nama_baru, stok_baru, harga_baru, kategori_baru, id)
+                brg.select_data()
+                brg.insert_log(usernamelogin, "Edit data barang")
             elif (menu == 4):
                 id = input("Masukkan id data yang akan dihapus:")
-                brg.delete_data(id, usernamelogin)
-                brg.select_data(usernamelogin)
+                brg.delete_data(id)
+                brg.select_data()
+                brg.insert_log(usernamelogin, "Delete data barang")
             elif (menu == 5):
                 brg.insert_log(usernamelogin, "Logout")
                 usernamelogin, level_login = login()
             else:
                 menu_berlanjut = False
-        else:
-            print("Login Gagal")
-
+                
 except Exception as e:
     print(e)

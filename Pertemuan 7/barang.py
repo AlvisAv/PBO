@@ -15,46 +15,42 @@ class Barang:
         except Exception as e:
             print(e)
 
-    def select_data(self, current_user):
+    def select_data(self):
         try:
             sql = "SELECT * FROM barang"
             mycursor.execute(sql)
             myresult = mycursor.fetchall()
             for x in myresult:
                 print(x)
-            self.insert_log(current_user, "Melihat data barang")
         except Exception as e:
             print(e)
 
-    def insert_data(self, vall, val2, val3, val4, val5, current_user):
+    def insert_data(self, vall, val2, val3, val4, val5):
         try:
             sql = "INSERT INTO barang (id, nama, stok, harga, kategori) VALUES (%s, %s, %s, %s, %s)"
             val = (vall, val2, val3, val4, val5)
             mycursor.execute(sql, val)
             mydb.commit()
             print(mycursor.rowcount, "Data berhasil ditambahkan...")
-            self.insert_log(current_user, f"Menambahkan barang ID: {vall}")
         except Exception as e:
             print(e)
 
-    def update_data(self, vall, val2, val3, val4, val5, current_user):
+    def update_data(self, vall, val2, val3, val4, val5):
         try:
             sql = "UPDATE barang SET nama = %s, stok = %s, harga = %s, kategori = %s WHERE id = %s"
             val = (vall, val2, val3, val4, val5)
             mycursor.execute(sql, val)
             mydb.commit()
             print(mycursor.rowcount, "Data berhasil diupdate.")
-            self.insert_log(current_user, f"Mengubah barang ID: {val5}")
         except Exception as e:
             print(e)
 
-    def delete_data(self, vall, current_user):
+    def delete_data(self, vall):
         try:
             sql = "DELETE FROM barang WHERE id = %s"
             value = (vall,)
             mycursor.execute(sql, value)
             mydb.commit()
             print(mycursor.rowcount, "Data berhasil dihapus")
-            self.insert_log(current_user, f"Menghapus barang ID: {vall}")
         except Exception as e:
             print(e)
