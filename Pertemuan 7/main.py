@@ -87,6 +87,10 @@ try:
                 level_login = login()
             else:
                 menu_berlanjut = False
+        else:
+            print("Login gagal")
+            break
+
 
 except Exception as e:
     print(e)
