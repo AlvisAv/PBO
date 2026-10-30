@@ -43,7 +43,7 @@ try:
                 nama_baru = input("Masukkan nama :")
                 username_baru = input("Masukkan username :")
                 password_baru = input("Masukkan password :")
-                level_baru = input("Masukkan level :")
+                level_baru = input("Masukkan level (Admin/Kasir): ")
                 usr.insert_data(nama_baru, username_baru, password_baru, level_baru)
                 usr.select_data()
                 usr.insert_log(usernamelogin, "Tambah data user")
@@ -51,7 +51,7 @@ try:
                 username = input("Masukkan username data yang akan diganti :")
                 nama_baru = input("Masukkan nama :")
                 password_baru = input("Masukkan password :")
-                level_baru = input("Masukkan level :")
+                level_baru = input("Masukkan level (Admin/Kasir):")
                 usr.update_data(nama_baru, password_baru, level_baru, username)
                 usr.select_data()
                 usr.insert_log(usernamelogin, "Edit data user")
@@ -104,6 +104,9 @@ try:
                 usernamelogin, level_login = login()
             else:
                 menu_berlanjut = False
-                
+        else:
+            print("Login Gagal")
+            break
+
 except Exception as e:
     print(e)
