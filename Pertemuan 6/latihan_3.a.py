@@ -1,14 +1,8 @@
-import mysql.connector
-
-mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="av123"
-)
+from connectiondbkampus import mydb
 
 try:
     mycursor = mydb.cursor()
-    mycursor.execute("CREATE DATABASE kampus")
+    mycursor.execute("CREATE DATABASE kampus1")
     print("Database kampus berhasil dibuat.")
 
 except Exception as e:

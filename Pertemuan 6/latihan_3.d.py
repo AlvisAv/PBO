@@ -1,11 +1,4 @@
-import mysql.connector
-
-mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="av123",
-    database="kampus"
-)
+from connectiondbkampus import mydb
 
 try:
     mycursor = mydb.cursor()
